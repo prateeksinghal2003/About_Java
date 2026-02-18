@@ -1,0 +1,81 @@
+Java 8 Features
+1)Default methods in interfaces
+2)Static methods
+3)Functional Interfaces
+4)Lambda Expressions
+5)Stream API
+6)Date-time API
+7)Predefined Functional Interfaces(Predicates,Functions,Customer,Supplier)
+8)Method Reference
+9)Functions
+10)Constructor Reference
+
+==>Why Java SE(Standard Editions) 8 is important
+1)It simplifies the programming by lambda expressions.
+2)Lambda expressions inherit the features of "functional programming languages",
+still java is an object oriented programming language.
+3)It supports multi threaded .
+4)It utilizes multi core processors.
+
+
+1)Default methods in interfaces
+a)any method which is implemented in all classes , can now come under interface only ,
+so each class will not have to implement it again  and again, reducing LOC's.
+b)implemented classes can have their own implementation.(can be overridden).
+c)Should have  a body
+
+2)Static methods in interfaces ::
+a)have to use public access modifier
+b)Cannot override methods
+cannot do Interface_Name Interface_Variable_Name=new Class_Name();
+
+c)any static method which is implemented in interface , will not belong to implemented class.
+d)Should have a body.
+
+3)Marker Interface
+a)if any interface is not having any abstract method.
+Example:Cloneable
+
+4)Functional Interfaces
+a)any interface is having exact one abstract method.
+b)use @FunctionalInterface annotation, but not compulsory
+C)Examples:Comparable interface
+
+5)Annotations:
+provide additional information about program
+
+
+6)=======================Lambda Expressions=======
+a)it is a function which does not have
+i)name ii)modifier iii)return type
+b)It reduces LOC
+c)call API's effectively.
+d)supports parallel and sequential execution
+e)always used with functional interfaces
+
+7)Rules for lambda expressions
+a)can avoid curly braces for one statement within lambda expression
+b)() of lambda function can take any arguments
+c)Providing data type with arg is optional.
+d)if we have one parameter , can also remove ()
+e)If lambda expression is returning any value , without curly braces do not use return.
+  with curly braces , use return .Use curly braces for multiple statements.
+
+8)Stream API
+a)Stream API is related to collection framework or group of objects
+b)Use of Stream API:
+i)it is use to perform bulk operations on collection objects.
+ii)It decreases the LOC.
+
+c)Hierarchy of Stream API:
+
+d)Stream operations lifecycle:
+i)Get stream from the source and get stream instance
+ii)Perform operations as many (filter(),map(),sorted())
+iii)Transform it to another stream
+iv)Perform the terminal operations(count(),sum())
+
+e)Stream Interface:
+i)An interface Present in util.stream
+ii)it has methods :forEach(),filter(),map(),collect(),min(),max(),count()
+iii)some static methods :of(){},empty(){},builder(){}
