@@ -1,0 +1,25 @@
+1)Comparable
+a)is an interface present in java.lang
+b)contains only one method compareTo()
+public int compareTo(Object obj)
+obj1.compareTo(obj2);
+
+returns +ve if obj1>obj2
+c)String and Wrapper classes implements Comparable interface
+d)Limitations::::
+i)By implementing this interface , properties of original class would change
+ii)Can do sorting via single field only,(like rollno or name)
+e)use for implicit sorting
+
+
+To overcome these limitations
+2)Comparator Interface:
+a)present in java.util package
+b)contain two methods
+i)public int compare(Object obj1,Object obj2)
+ii)public boolean equals(Object obj)
+iii)use to sort via multiple fields
+iv)use for explicit sorting
+
+
+

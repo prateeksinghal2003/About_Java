@@ -1,4 +1,4 @@
-Java 8 Features
+:::::::::::::::::::::::Java 8 Features::::::::::::::::::::::::::::::::::::
 1)Default methods in interfaces
 2)Static methods
 3)Functional Interfaces
@@ -79,3 +79,5 @@ e)Stream Interface:
 i)An interface Present in util.stream
 ii)it has methods :forEach(),filter(),map(),collect(),min(),max(),count()
 iii)some static methods :of(){},empty(){},builder(){}
+
+
