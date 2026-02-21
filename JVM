@@ -1,0 +1,167 @@
+JDK-Java development Kit
+it has development tools(java , javac,javadocs) needed to create java programs
+it has JRE
+it is (JRE+development tools)
+it runs and executes the program
+
+JRE--java run time environment
+it has java package classes,run time classes
+it has JVM
+has predefined classes
+
+
+JVM(java virtual machine)
+it has class loader
+memory areas
+execution engine(it has interpreter+JIT(just in time) compiler)
+
+it is platform independent
+JVM uses the predefined classes from JRE to execute the program
+provides a run time environment in which java bytecode is executed
+
+Flow of execution of java file
+You write Source Code
+Language: Human readable Java
+Extension: .java
+Example file: Hello.java
+class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+
+This is called Source Code
+Written by programmer
+
+Compilation → Source Code ➜ Byte Code
+You run:
+javac Hello.java
+Now Java Compiler (Javac) checks:
+syntax errors
+semicolon missing
+type mismatch
+If correct → it generates:
+Hello.class
+This file contains:
+Byte Code
+
+What is Byte Code?
+NOT machine code
+NOT human readable
+Intermediate code
+Platform independent
+That’s why Java = Write Once Run Anywhere
+
+Execution → Byte Code ➜ Machine Code
+You run:
+java Hello
+Now JVM works
+JVM Steps
+Class Loader → loads Hello.class
+Bytecode Verifier → checks security
+Interpreter / JIT Compiler → converts bytecode → machine code
+OS executes it
+
+Output:
+Hello World
+
+::::::::::::::::::::About JVM
+JVM (Java Virtual Machine)
+JVM = the engine that runs .class (bytecode) files
+
+It converts bytecode → machine code so the OS/CPU can execute it.
+That’s why Java programs run on Windows, Linux, Mac without changing code.
+
+ JVM Architecture (Main Components)
+        .class file (Bytecode)
+                 ↓
+        ┌─────────────────┐
+        │   Class Loader   │
+        └─────────────────┘
+                 ↓
+        ┌─────────────────┐
+        │ Bytecode Verify │
+        └─────────────────┘
+                 ↓
+   ┌─────────────────────────────────┐
+   │        Runtime Data Area         │
+   └─────────────────────────────────┘
+                 ↓
+      ┌─────────────────────────┐
+      │ Execution Engine (JIT)  │
+      └─────────────────────────┘
+                 ↓
+             Native Code
+1️⃣ Class Loader Subsystem
+
+Loads .class file into memory.
+
+Types of Class Loaders
+Loader	Loads
+Bootstrap	Java core libraries (java.lang)
+Extension	ext packages
+Application	Your program classes
+
+👉 It loads classes only when required (lazy loading)
+
+2️⃣ Bytecode Verifier
+Security guard of Java 🔒
+Checks:
+illegal memory access
+stack overflow attempts
+wrong data types
+corrupted class file
+If unsafe → program stops
+
+3️⃣ Runtime Data Area (Memory of JVM)
+This is the most important part — memory structure 👇
+(A) Method Area (Shared — 1 per JVM)
+Stores:
+class metadata
+static variables
+method code
+runtime constant pool
+
+(B) Heap Area (Shared — 1 per JVM)
+Stores:
+Objects
+Instance variables
+Managed by Garbage Collector
+
+(C) Java Stack (Per Thread)
+Stores:
+method calls
+local variables
+references
+Each method call → new stack frame
+
+(D) PC Register (Per Thread)
+Stores address of current executing instruction.
+
+(E) Native Method Stack
+Used when Java calls C/C++ code (JNI)
+
+4️⃣ Execution Engine
+Actually runs the program.
+
+Contains:
+🔹 Interpreter
+Executes bytecode line by line
+(slower but first execution)
+
+🔹 JIT Compiler (Just-In-Time)
+Converts frequently used code → machine code
+(stores in cache → faster later)
+
+That’s why Java becomes fast after some time.
+Garbage Collector (Automatic Memory Cleanup)
+Removes unused objects from Heap.
+No need to free memory manually like C/C++.
+
+Complete Flow
+.java → javac → .class → JVM
+Class Loader → Verifier → Memory → JIT → Machine Code → Output
+Quick Interview Definition
+
+JVM is a virtual runtime environment that loads, verifies, 
+and executes Java bytecode and manages memory using garbage collection.
